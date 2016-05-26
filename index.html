@@ -29,10 +29,10 @@
 
 <p><em>2016/5/26</em><br>
 Android编译环境的搭建。本project在Android Studio中进行开发，现已完成摄像头的调试。<br>
-<img src="http://i2.buimg.com/6c422cffa02fc44b.png" alt="">  <img src="http://i2.buimg.com/4583c93b73e2a96b.png" alt=""><br>
-<code>
-//主要代码
- @Override
+<img src="http://i2.buimg.com/6c422cffa02fc44b.png" alt="">  <img src="http://i2.buimg.com/4583c93b73e2a96b.png" alt="">  </p>
+
+<pre><code>//主要代码  
+@Override
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.open_camera){
@@ -44,9 +44,10 @@ Android编译环境的搭建。本project在Android Studio中进行开发，现�
                             MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(file))),
                     REQUEST_CAPTURE_IMAGE);
         }
-    }
-</code><br>
-接下来的任务是继续阅读文献查找资料，寻找第三方基于Android平台能实现3D Rigid Object Tracking的SDK，目前尚在考虑的第三方SDK是Vuforia。</p>
+    }  
+</code></pre>
+
+<p>接下来的任务是继续阅读文献查找资料，寻找第三方基于Android平台能实现3D Rigid Object Tracking的SDK，目前尚在考虑的第三方SDK是Vuforia。</p>
 
 <h2>
 <a id="project-video" class="anchor" href="#project-video" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Video</h2>
