@@ -47,13 +47,15 @@ Android编译环境的搭建。本project在Android Studio中进行开发，现�
     }  
 </code></pre>
 
-<p>接下来的任务是继续阅读文献查找资料，寻找第三方基于Android平台能实现3D Rigid Object Tracking的SDK，目前尚在考虑的第三方SDK是Vuforia。</p>
+<p>接下来的任务是继续阅读文献查找资料，寻找第三方基于Android平台能实现3D Rigid Object Tracking的SDK，目前尚在考虑的第三方SDK是Vuforia。  </p>
 
-<p><em>2016/6/15</em>
+<p><em>2016/6/15</em><br>
 由于在找资料过程中，参考类似项目的代码时，都于Eclipse中开发，于是转投Eclispe，对Eclpise进行安装配置。通过查找资料，图像处理开发一般都应用
-到OpenCV开源库，于是网上下载了Opencv库，并导入Eclipse中。<br>
-<img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/21744718.jpg" alt="OpenCV"> 
-代码是最好的老师，了解OpenCV库最好的办法是从库中提供的samples进行代码研究。运行opencv程序需要事先在手机安装Opencv Manager软件。
+到OpenCV开源库，于是网上下载了Opencv库，并导入Eclipse中。  </p>
+
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/21744718.jpg" alt="OpenCV">  </p>
+
+<p>代码是最好的老师，了解OpenCV库最好的办法是从库中提供的samples进行代码研究。运行opencv程序需要事先在手机安装Opencv Manager软件。
 但是samples中经典的头像识别工程却报错，原来没有配置好NDK，于是从网上下载了NDK r10，并对workplace进行NDK路径配置。
 NDK配置好，但是工程中JNI文件依旧出现各种问题。  </p>
 
@@ -61,7 +63,10 @@ NDK配置好，但是工程中JNI文件依旧出现各种问题。  </p>
 <li>头文件#include 无法识别，摸索好才发现NDK路劲没配置好，右击项目，选中properties-&gt;C/C++ General-&gt;Paths and Symbols-&gt;Includes，
 选中GNU C++，然后add路径I:\NDK\android-ndk-r10b\platforms\android-19\arch-arm\usr\include。</li>
 <li>等opencv头文件无法识别，通过类似方法配置好路径才解决。<br>
-然后自己创建一个android项目，边研究samples代码边调试出新功能。基本布局如下：<br>
+</li>
+</ul>
+
+<p>然后自己创建一个android项目，边研究samples代码边调试出新功能。基本布局如下：<br>
 <img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/96748774.jpg" alt="布局"><br>
 android设备还要设置权限<br>
 <img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/85412973.jpg" alt="权限"><br>
@@ -70,9 +75,7 @@ android设备还要设置权限<br>
 手机采集图像：<br>
 <img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/34334834.jpg" alt="采集">
 <img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-16/64512179.jpg" alt="监听"><br>
-然后需要在下面这个函数对捕获的帧进行处理了。<br>
-</li>
-</ul>
+然后需要在下面这个函数对捕获的帧进行处理了。  </p>
 
 <pre><code> public Mat onCameraFrame(CvCameraViewFrame inputFrame)  
 </code></pre>
